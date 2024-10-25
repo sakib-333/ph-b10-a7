@@ -1,21 +1,32 @@
 import React, { useState } from "react";
 import ShowAllPlayers from "./body-components/show-all-players/ShowAllPlayers";
 import ShowSelectedPlayers from "./body-components/show-selected-players/ShowSelectedPlayers";
+import SuccessfulBrought from "../alerts/SuccessfulBrought";
+import AlertAlreadyExist from "../alerts/AlertAlreadyExist";
+import AlertSquadFull from "../alerts/AlertSquadFull";
+import AlertInsufficientCoins from "../alerts/AlertInsufficientCoins";
 
 const Body = ({ players, coins, handleBuyPlayer }) => {
   const [selectedSection, setSelectedSection] = useState(true);
   const [selectedPlayers, setSelectedPlayers] = useState([]);
+  const [success, setSuccess] = useState(false);
+  const [alreadyExist, setAlreadyExist] = useState(false);
+  const [squadFull, setSquadFull] = useState(false);
+  const [insufficientCoins, setInsufficientCoins] = useState(false);
 
   const handleSelectedSection = () => setSelectedSection((c) => !c);
 
   const handleIncreaseSelectedPlayers = (player) => {
-    if (
-      !selectedPlayers.includes(player) &&
-      selectedPlayers.length <= 5 &&
-      coins >= player.price
-    ) {
+    if (selectedPlayers.includes(player)) {
+      setAlreadyExist((c) => !c);
+    } else if (selectedPlayers.length > 5) {
+      setSquadFull((c) => !c);
+    } else if (coins < player.price) {
+      setInsufficientCoins((c) => !c);
+    } else {
       setSelectedPlayers((players) => [...players, player]);
       handleBuyPlayer(player.price);
+      setSuccess((c) => !c);
     }
   };
   const handleDecreaseSelectedPlayers = (id) => {
@@ -43,6 +54,12 @@ const Body = ({ players, coins, handleBuyPlayer }) => {
           handleDecreaseSelectedPlayers={handleDecreaseSelectedPlayers}
         />
       )}
+      {alreadyExist && <AlertAlreadyExist setAlreadyExist={setAlreadyExist} />}
+      {squadFull && <AlertSquadFull setSquadFull={setSquadFull} />}
+      {insufficientCoins && (
+        <AlertInsufficientCoins setInsufficientCoins={setInsufficientCoins} />
+      )}
+      {success && <SuccessfulBrought setSuccess={setSuccess} />}
     </div>
   );
 };
