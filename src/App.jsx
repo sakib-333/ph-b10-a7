@@ -14,10 +14,12 @@ function App() {
 
   const addMoreCoins = () => setCoins((c) => c + 1000000);
 
+  const handleBuyPlayer = (price) => setCoins((c) => c - price);
+
   return (
     <div className="max-w-screen-2xl mx-auto">
       <Header coins={coins} addMoreCoins={addMoreCoins} />
-      <Body players={players} />
+      <Body players={players} coins={coins} handleBuyPlayer={handleBuyPlayer} />
     </div>
   );
 }

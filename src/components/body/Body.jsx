@@ -2,15 +2,20 @@ import React, { useState } from "react";
 import ShowAllPlayers from "./body-components/show-all-players/ShowAllPlayers";
 import ShowSelectedPlayers from "./body-components/show-selected-players/ShowSelectedPlayers";
 
-const Body = ({ players }) => {
+const Body = ({ players, coins, handleBuyPlayer }) => {
   const [selectedSection, setSelectedSection] = useState(true);
   const [selectedPlayers, setSelectedPlayers] = useState([]);
 
   const handleSelectedSection = () => setSelectedSection((c) => !c);
 
   const handleIncreaseSelectedPlayers = (player) => {
-    if (!selectedPlayers.includes(player)) {
+    if (
+      !selectedPlayers.includes(player) &&
+      selectedPlayers.length <= 5 &&
+      coins >= player.price
+    ) {
       setSelectedPlayers((players) => [...players, player]);
+      handleBuyPlayer(player.price);
     }
   };
   const handleDecreaseSelectedPlayers = (id) => {
