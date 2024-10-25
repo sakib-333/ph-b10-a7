@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": "Babar Azam",
+    "team": "Pakistan",
+    "img": "https://i.postimg.cc/DyZ9HPpn/Babar-Azam.webp",
+    "role": "Batsman",
+    "batting_style": "Right handed",
+    "price": 500000
+  },
+  {
+    "id": 2,
+    "name": "Ben Stokes",
+    "team": "England",
+    "img": "https://i.postimg.cc/9XJ3LnpL/Ben-Stokes.webp",
+    "role": "Allrounder",
+    "batting_style": "Left handed",
+    "price": 300000
+  },
+  {
+    "id": 3,
+    "name": "Brandon King",
+    "team": "West Indies",
+    "img": "https://i.postimg.cc/qRrfFfS5/Brandon-King.webp",
+    "role": "Batsman",
+    "batting_style": "Right handed",
+    "price": 400000
+  },
+  {
+    "id": 4,
+    "name": "David Warner",
+    "team": "Australia",
+    "img": "https://i.postimg.cc/YC4wGzQb/David-Warner.webp",
+    "role": "Batsman",
+    "batting_style": "Left handed",
+    "price": 500000
+  },
+  {
+    "id": 5,
+    "name": "Harry Brook",
+    "team": "England",
+    "img": "https://i.postimg.cc/L5yrhJXc/Harry-Brook.webp",
+    "role": "Batsman",
+    "batting_style": "Right handed",
+    "price": 200000
+  },
+  {
+    "id": 6,
+    "name": "Joe Root",
+    "team": "England",
+    "img": "https://i.postimg.cc/nz18bRtc/Joe-Root.webp",
+    "role": "Batsman",
+    "batting_style": "Right handed",
+    "price": 100000
+  },
+  {
+    "id": 7,
+    "name": "Mahmudullah",
+    "team": "Bangladesh",
+    "img": "https://i.postimg.cc/6pDxd40w/Mahmudullah.webp",
+    "role": "Allrounder",
+    "batting_style": "Right handed",
+    "price": 400000
+  },
+  {
+    "id": 8,
+    "name": "Moeen Ali",
+    "team": "England",
+    "img": "https://i.postimg.cc/P5vBrrk7/Moeen-Ali.webp",
+    "role": "Allrounder",
+    "batting_style": "Left handed",
+    "price": 300000
+  },
+  {
+    "id": 9,
+    "name": "Shaheen Afridi",
+    "team": "Pakistan",
+    "img": "https://i.postimg.cc/PrRgjv0Z/Shaheen-Afridi.webp",
+    "role": "Bowler",
+    "batting_style": "Left handed",
+    "price": 500000
+  },
+  {
+    "id": 10,
+    "name": "Shai-Hope",
+    "team": "West Indies",
+    "img": "https://i.postimg.cc/PqYsKf3D/Shai-Hope.webp",
+    "role": "Keeper",
+    "batting_style": "Right handed",
+    "price": 300000
+  },
+  {
+    "id": 11,
+    "name": "Tamim Iqbal",
+    "team": "Bangladesh",
+    "img": "https://i.postimg.cc/d0Mg7PsV/Tamim-Iqbal.webp",
+    "role": "Batsman",
+    "batting_style": "Left handed",
+    "price": 500000
+  },
+  {
+    "id": 12,
+    "name": "Wanindu Hasaranga",
+    "team": "Sri Lanka",
+    "img": "https://i.postimg.cc/XqNRVfVK/Wanindu-Hasaranga.webp",
+    "role": "Allrounder",
+    "batting_style": "Right handed",
+    "price": 200000
+  }
+]
