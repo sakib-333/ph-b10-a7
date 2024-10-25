@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import AvailablePlayers from "./body-components/available-players/AvailablePlayers";
 import ShowAllPlayers from "./body-components/show-all-players/ShowAllPlayers";
 import ShowSelectedPlayers from "./body-components/show-selected-players/ShowSelectedPlayers";
 
@@ -22,18 +21,22 @@ const Body = ({ players }) => {
 
   return (
     <div className="p-4">
-      <AvailablePlayers
-        selectedSection={selectedSection}
-        handleSelectedSection={handleSelectedSection}
-        selectedPlayers={selectedPlayers}
-      />
       {selectedSection && (
         <ShowAllPlayers
+          selectedPlayers={selectedPlayers}
+          selectedSection={selectedSection}
+          handleSelectedSection={handleSelectedSection}
           players={players}
           handleIncreaseSelectedPlayers={handleIncreaseSelectedPlayers}
         />
       )}
-      {!selectedSection && <ShowSelectedPlayers />}
+      {!selectedSection && (
+        <ShowSelectedPlayers
+          selectedSection={selectedSection}
+          selectedPlayers={selectedPlayers}
+          handleSelectedSection={handleSelectedSection}
+        />
+      )}
     </div>
   );
 };
