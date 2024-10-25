@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "./components/header/Header";
 import Body from "./components/body/Body";
 import AlertAddMoreCoins from "./components/alerts/AlertAddMoreCoins";
+import Footer from "./components/footer/Footer";
 
 function App() {
   const [coins, setCoins] = useState(0);
@@ -22,12 +23,19 @@ function App() {
   const handleBuyPlayer = (price) => setCoins((c) => c - price);
 
   return (
-    <div className="max-w-screen-2xl mx-auto">
-      <Header coins={coins} addMoreCoins={addMoreCoins} />
-      <Body players={players} coins={coins} handleBuyPlayer={handleBuyPlayer} />
-      {addMoreCoinsAlert && (
-        <AlertAddMoreCoins setAddMoreCoinsAlert={setAddMoreCoinsAlert} />
-      )}
+    <div>
+      <div className="max-w-screen-2xl mx-auto">
+        <Header coins={coins} addMoreCoins={addMoreCoins} />
+        <Body
+          players={players}
+          coins={coins}
+          handleBuyPlayer={handleBuyPlayer}
+        />
+        {addMoreCoinsAlert && (
+          <AlertAddMoreCoins setAddMoreCoinsAlert={setAddMoreCoinsAlert} />
+        )}
+      </div>
+      <Footer />
     </div>
   );
 }
