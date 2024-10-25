@@ -5,6 +5,7 @@ import SuccessfulBrought from "../alerts/SuccessfulBrought";
 import AlertAlreadyExist from "../alerts/AlertAlreadyExist";
 import AlertSquadFull from "../alerts/AlertSquadFull";
 import AlertInsufficientCoins from "../alerts/AlertInsufficientCoins";
+import SubscribeSection from "./body-components/subscribe-section/SubscribeSection";
 
 const Body = ({ players, coins, handleBuyPlayer }) => {
   const [selectedSection, setSelectedSection] = useState(true);
@@ -36,7 +37,7 @@ const Body = ({ players, coins, handleBuyPlayer }) => {
   };
 
   return (
-    <div className="p-4">
+    <div className="p-4 space-y-4">
       {selectedSection && (
         <ShowAllPlayers
           selectedPlayers={selectedPlayers}
@@ -60,6 +61,9 @@ const Body = ({ players, coins, handleBuyPlayer }) => {
         <AlertInsufficientCoins setInsufficientCoins={setInsufficientCoins} />
       )}
       {success && <SuccessfulBrought setSuccess={setSuccess} />}
+      <div className="border p-4 rounded-lg">
+        <SubscribeSection />
+      </div>
     </div>
   );
 };
