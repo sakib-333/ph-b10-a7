@@ -35,6 +35,7 @@ const Body = ({ players }) => {
           selectedSection={selectedSection}
           selectedPlayers={selectedPlayers}
           handleSelectedSection={handleSelectedSection}
+          handleDecreaseSelectedPlayers={handleDecreaseSelectedPlayers}
         />
       )}
     </div>

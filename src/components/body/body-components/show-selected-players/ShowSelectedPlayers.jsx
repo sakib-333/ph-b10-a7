@@ -4,6 +4,7 @@ const ShowSelectedPlayers = ({
   selectedSection,
   handleSelectedSection,
   selectedPlayers,
+  handleDecreaseSelectedPlayers,
 }) => {
   return (
     <div>
@@ -27,6 +28,28 @@ const ShowSelectedPlayers = ({
             Selected ({selectedPlayers.length})
           </button>
         </div>
+      </div>
+      <div className="space-y-3">
+        {selectedPlayers.map((player) => (
+          <div
+            key={`selected_player_${player.id}`}
+            className="p-3 border rounded-lg flex items-center justify-between"
+          >
+            <div className="flex items-center">
+              <img className="w-20 h-20" src={player.img} alt={player.name} />
+              <div>
+                <h1 className="font-bold text-xl">{player.name}</h1>
+                <p className="text-gray-500">{player.batting_style}</p>
+              </div>
+            </div>
+            <button
+              className="hover:scale-90"
+              onClick={() => handleDecreaseSelectedPlayers(player.id)}
+            >
+              <img src="/delete-icon.svg" alt="delete-icon" />
+            </button>
+          </div>
+        ))}
       </div>
     </div>
   );
