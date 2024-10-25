@@ -3,7 +3,7 @@ import AvailablePlayers from "./body-components/available-players/AvailablePlaye
 import ShowAllPlayers from "./body-components/show-all-players/ShowAllPlayers";
 import ShowSelectedPlayers from "./body-components/show-selected-players/ShowSelectedPlayers";
 
-const Body = () => {
+const Body = ({players}) => {
   const [selectedSection, setSelectedSection] = useState(true);
 
   const handleSelectedSection = () => setSelectedSection((c) => !c);
@@ -14,7 +14,7 @@ const Body = () => {
         selectedSection={selectedSection}
         handleSelectedSection={handleSelectedSection}
       />
-      {selectedSection && <ShowAllPlayers />}
+      {selectedSection && <ShowAllPlayers players={players} />}
       {!selectedSection && <ShowSelectedPlayers />}
     </div>
   );
