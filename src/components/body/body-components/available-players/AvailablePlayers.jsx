@@ -1,6 +1,10 @@
 import React from "react";
 
-const AvailablePlayers = ({ selectedSection, handleSelectedSection }) => {
+const AvailablePlayers = ({
+  selectedSection,
+  handleSelectedSection,
+  selectedPlayers,
+}) => {
   return (
     <div className="flex items-center justify-between">
       <h1 className="font-bold md:text-3xl lg:text-4xl">Available Players</h1>
@@ -17,7 +21,7 @@ const AvailablePlayers = ({ selectedSection, handleSelectedSection }) => {
           style={{ backgroundColor: selectedSection ? "" : "#ff0" }}
           onClick={handleSelectedSection}
         >
-          Selected (0)
+          Selected ({selectedPlayers.length})
         </button>
       </div>
     </div>

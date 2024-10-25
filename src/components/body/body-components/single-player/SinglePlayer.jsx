@@ -1,6 +1,6 @@
 import React from "react";
 
-const SinglePlayer = ({ player }) => {
+const SinglePlayer = ({ player, handleIncreaseSelectedPlayers }) => {
   const { id, name, team, img, role, batting_style, price } = player;
   return (
     <div className="border mx-auto rounded-xl p-4 space-y-3">
@@ -22,7 +22,10 @@ const SinglePlayer = ({ player }) => {
       </div>
       <div className="flex items-center justify-between">
         <h1>Price: {price}</h1>
-        <button className="px-3 py-1 border rounded-lg hover:bg-slate-500 hover:text-white">
+        <button
+          className="px-3 py-1 border rounded-lg hover:bg-slate-500 hover:text-white"
+          onClick={() => handleIncreaseSelectedPlayers(player)}
+        >
           Choose Player
         </button>
       </div>
