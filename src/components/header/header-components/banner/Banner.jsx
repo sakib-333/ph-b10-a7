@@ -1,6 +1,6 @@
 import React from "react";
 
-const Banner = () => {
+const Banner = ({ addMoreCoins }) => {
   return (
     <div
       className="w-full h-[490px] rounded-2xl flex flex-col items-center justify-center space-y-3"
@@ -16,7 +16,10 @@ const Banner = () => {
       </h1>
       <p className="text-slate-400">Beyond Boundaries Beyond Limits</p>
       <div className="p-1 border w-fit rounded-lg hover:scale-95">
-        <button className="bg-yellow-300 px-3 py-1 rounded-lg font-bold w-full">
+        <button
+          className="bg-yellow-300 px-3 py-1 rounded-lg font-bold w-full"
+          onClick={addMoreCoins}
+        >
           Claim Free Credit
         </button>
       </div>

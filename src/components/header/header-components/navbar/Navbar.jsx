@@ -1,6 +1,6 @@
 import React from "react";
 
-const Navbar = () => {
+const Navbar = ({ coins }) => {
   return (
     <div className="flex items-center justify-between">
       <img src="/logo.png" alt="logo" />
@@ -28,7 +28,7 @@ const Navbar = () => {
           </li>
         </ul>
         <div className="w-fit flex items-center space-x-2 p-2 border rounded-lg">
-          <span className="font-bold">0 Coin</span>
+          <span className="font-bold">{coins} Coin</span>
           <img
             className="w-5 h-5"
             src="/dollar-coin-icon.svg"
