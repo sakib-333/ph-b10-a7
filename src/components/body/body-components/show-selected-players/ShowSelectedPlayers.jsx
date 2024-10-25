@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import AlertRemovePlayer from "../../../alerts/AlertRemovePlayer";
 
 const ShowSelectedPlayers = ({
   selectedSection,
@@ -6,6 +7,12 @@ const ShowSelectedPlayers = ({
   selectedPlayers,
   handleDecreaseSelectedPlayers,
 }) => {
+  const [removeAlert, setRemoveAlert] = useState(false);
+
+  const handleRemovePlayer = (id) => {
+    setRemoveAlert((c) => !c);
+    handleDecreaseSelectedPlayers(id);
+  };
   return (
     <div>
       <div className="flex items-center justify-between">
@@ -44,13 +51,14 @@ const ShowSelectedPlayers = ({
             </div>
             <button
               className="hover:scale-90"
-              onClick={() => handleDecreaseSelectedPlayers(player.id)}
+              onClick={() => handleRemovePlayer(player.id)}
             >
               <img src="/delete-icon.svg" alt="delete-icon" />
             </button>
           </div>
         ))}
       </div>
+      {removeAlert && <AlertRemovePlayer setRemoveAlert={setRemoveAlert} />}
     </div>
   );
 };
