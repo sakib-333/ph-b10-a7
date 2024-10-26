@@ -47,6 +47,7 @@ const ShowSelectedPlayers = ({
               <div>
                 <h1 className="font-bold text-xl">{player.name}</h1>
                 <p className="text-gray-500">{player.batting_style}</p>
+                <p className="text-gray-500">Price: {player.price}</p>
               </div>
             </div>
             <button
@@ -63,7 +64,7 @@ const ShowSelectedPlayers = ({
           className="bg-yellow-300 font-bold px-3 py-2 rounded-lg hover:bg-yellow-200"
           onClick={handleSelectedSection}
         >
-          Add More Players
+          Add More Player
         </button>
       </div>
       {removeAlert && <AlertRemovePlayer setRemoveAlert={setRemoveAlert} />}

@@ -6,7 +6,7 @@ const AlertAlreadyExist = ({ setAlreadyExist }) => {
     notify();
   }, []);
   const notify = () => {
-    toast.error("Player already brought!", {
+    toast.error("Player already selected!", {
       position: "top-center",
       onClose: () => setAlreadyExist((c) => !c),
     });

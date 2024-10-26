@@ -3,7 +3,7 @@ import React from "react";
 const Banner = ({ addMoreCoins }) => {
   return (
     <div
-      className="w-full h-[490px] rounded-2xl flex flex-col items-center justify-center space-y-3"
+      className="w-full h-[490px] rounded-2xl flex flex-col items-center justify-center space-y-3 text-center"
       style={{
         backgroundImage: 'url("/bg-shadow.png")',
         backgroundSize: "100% 100%",
