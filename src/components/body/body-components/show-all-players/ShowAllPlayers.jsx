@@ -3,8 +3,10 @@ import SinglePlayer from "../single-player/SinglePlayer";
 
 const ShowAllPlayers = ({
   selectedPlayers,
-  selectedSection,
-  handleSelectedSection,
+  handleAvailablePlayersSection,
+  handleSelectedPlayersSection,
+  availablePlayersSec,
+  selectedPlayersSec,
   players,
   handleIncreaseSelectedPlayers,
 }) => {
@@ -12,18 +14,18 @@ const ShowAllPlayers = ({
     <div>
       <div className="flex items-center justify-between">
         <h1 className="font-bold md:text-3xl lg:text-4xl">Available Players</h1>
-        <div className="w-56 flex items-center justify-between border rounded-lg">
+        <div>
           <button
-            className="w-1/2  border-r"
-            style={{ backgroundColor: selectedSection ? "#ff0" : "" }}
-            onClick={handleSelectedSection}
+            className="px-3 py-1 border rounded-l-md"
+            style={{ backgroundColor: availablePlayersSec ? "#ff0" : "#fff" }}
+            onClick={handleAvailablePlayersSection}
           >
             Available
           </button>
           <button
-            className="w-full"
-            style={{ backgroundColor: selectedSection ? "" : "#ff0" }}
-            onClick={handleSelectedSection}
+            className="px-3 py-1 border rounded-r-md"
+            style={{ backgroundColor: selectedPlayersSec ? "#ff0" : "#fff" }}
+            onClick={handleSelectedPlayersSection}
           >
             Selected ({selectedPlayers.length})
           </button>

@@ -5,10 +5,20 @@ import SubscribeSection from "./body-components/subscribe-section/SubscribeSecti
 import { Alert } from "../alerts/Alert";
 
 const Body = ({ players, coins, handleBuyPlayer }) => {
-  const [selectedSection, setSelectedSection] = useState(true);
+  // const [selectedSection, setSelectedSection] = useState(true);
+  const [availablePlayersSec, setAvailablePlayersSec] = useState(true);
+  const [selectedPlayersSec, setSelectedPlayersSec] = useState(false);
   const [selectedPlayers, setSelectedPlayers] = useState([]);
 
-  const handleSelectedSection = () => setSelectedSection((c) => !c);
+  // const handleSelectedSection = () => setSelectedSection((c) => !c);
+  const handleAvailablePlayersSection = () => {
+    setAvailablePlayersSec(true);
+    setSelectedPlayersSec(false);
+  };
+  const handleSelectedPlayersSection = () => {
+    setAvailablePlayersSec(false);
+    setSelectedPlayersSec(true);
+  };
 
   const handleIncreaseSelectedPlayers = (player) => {
     if (selectedPlayers.includes(player)) {
@@ -32,20 +42,24 @@ const Body = ({ players, coins, handleBuyPlayer }) => {
 
   return (
     <div className="p-4 space-y-4">
-      {selectedSection && (
+      {availablePlayersSec && (
         <ShowAllPlayers
           selectedPlayers={selectedPlayers}
-          selectedSection={selectedSection}
-          handleSelectedSection={handleSelectedSection}
+          availablePlayersSec={availablePlayersSec}
+          selectedPlayersSec={selectedPlayersSec}
+          handleAvailablePlayersSection={handleAvailablePlayersSection}
+          handleSelectedPlayersSection={handleSelectedPlayersSection}
           players={players}
           handleIncreaseSelectedPlayers={handleIncreaseSelectedPlayers}
         />
       )}
-      {!selectedSection && (
+      {selectedPlayersSec && (
         <ShowSelectedPlayers
-          selectedSection={selectedSection}
           selectedPlayers={selectedPlayers}
-          handleSelectedSection={handleSelectedSection}
+          availablePlayersSec={availablePlayersSec}
+          selectedPlayersSec={selectedPlayersSec}
+          handleAvailablePlayersSection={handleAvailablePlayersSection}
+          handleSelectedPlayersSection={handleSelectedPlayersSection}
           handleDecreaseSelectedPlayers={handleDecreaseSelectedPlayers}
         />
       )}
