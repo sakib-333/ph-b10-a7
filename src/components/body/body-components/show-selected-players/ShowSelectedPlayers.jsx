@@ -58,6 +58,14 @@ const ShowSelectedPlayers = ({
           </div>
         ))}
       </div>
+      <div className="min-h-32 flex items-end">
+        <button
+          className="bg-yellow-300 font-bold px-3 py-2 rounded-lg hover:bg-yellow-200"
+          onClick={handleSelectedSection}
+        >
+          Add More Players
+        </button>
+      </div>
       {removeAlert && <AlertRemovePlayer setRemoveAlert={setRemoveAlert} />}
     </div>
   );
