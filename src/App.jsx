@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Header from "./components/header/Header";
 import Body from "./components/body/Body";
-import AlertAddMoreCoins from "./components/alerts/AlertAddMoreCoins";
 import Footer from "./components/footer/Footer";
+import { Alert } from "./components/alerts/Alert";
 
 function App() {
   const [coins, setCoins] = useState(0);
   const [players, setPlayers] = useState([]);
-  const [addMoreCoinsAlert, setAddMoreCoinsAlert] = useState(false);
 
   useEffect(() => {
     fetch("/players.json")
@@ -17,7 +16,7 @@ function App() {
 
   const addMoreCoins = () => {
     setCoins((c) => c + 1000000);
-    setAddMoreCoinsAlert((c) => !c);
+    Alert(true, "Coins added!");
   };
 
   const handleBuyPlayer = (price) => setCoins((c) => c - price);
@@ -31,9 +30,6 @@ function App() {
           coins={coins}
           handleBuyPlayer={handleBuyPlayer}
         />
-        {addMoreCoinsAlert && (
-          <AlertAddMoreCoins setAddMoreCoinsAlert={setAddMoreCoinsAlert} />
-        )}
       </div>
       <Footer />
     </div>

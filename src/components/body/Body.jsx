@@ -1,39 +1,33 @@
 import React, { useState } from "react";
 import ShowAllPlayers from "./body-components/show-all-players/ShowAllPlayers";
 import ShowSelectedPlayers from "./body-components/show-selected-players/ShowSelectedPlayers";
-import SuccessfulBrought from "../alerts/SuccessfulBrought";
-import AlertAlreadyExist from "../alerts/AlertAlreadyExist";
-import AlertSquadFull from "../alerts/AlertSquadFull";
-import AlertInsufficientCoins from "../alerts/AlertInsufficientCoins";
 import SubscribeSection from "./body-components/subscribe-section/SubscribeSection";
+import { Alert } from "../alerts/Alert";
 
 const Body = ({ players, coins, handleBuyPlayer }) => {
   const [selectedSection, setSelectedSection] = useState(true);
   const [selectedPlayers, setSelectedPlayers] = useState([]);
-  const [success, setSuccess] = useState(false);
-  const [alreadyExist, setAlreadyExist] = useState(false);
-  const [squadFull, setSquadFull] = useState(false);
-  const [insufficientCoins, setInsufficientCoins] = useState(false);
 
   const handleSelectedSection = () => setSelectedSection((c) => !c);
 
   const handleIncreaseSelectedPlayers = (player) => {
     if (selectedPlayers.includes(player)) {
-      setAlreadyExist((c) => !c);
+      Alert(false, "Player already exist!");
     } else if (selectedPlayers.length > 5) {
-      setSquadFull((c) => !c);
+      Alert(false, "Squad is full!");
     } else if (coins < player.price) {
-      setInsufficientCoins((c) => !c);
+      Alert(false, "Please add more coins!");
     } else {
       setSelectedPlayers((players) => [...players, player]);
       handleBuyPlayer(player.price);
-      setSuccess((c) => !c);
+      Alert(true, "Successfully brought!");
     }
   };
   const handleDecreaseSelectedPlayers = (id) => {
     setSelectedPlayers((players) =>
       players.filter((player) => player.id !== id)
     );
+    Alert(true, "Player removed!");
   };
 
   return (
@@ -55,12 +49,6 @@ const Body = ({ players, coins, handleBuyPlayer }) => {
           handleDecreaseSelectedPlayers={handleDecreaseSelectedPlayers}
         />
       )}
-      {alreadyExist && <AlertAlreadyExist setAlreadyExist={setAlreadyExist} />}
-      {squadFull && <AlertSquadFull setSquadFull={setSquadFull} />}
-      {insufficientCoins && (
-        <AlertInsufficientCoins setInsufficientCoins={setInsufficientCoins} />
-      )}
-      {success && <SuccessfulBrought setSuccess={setSuccess} />}
       <div className="rounded-lg relative h-80">
         <SubscribeSection />
       </div>

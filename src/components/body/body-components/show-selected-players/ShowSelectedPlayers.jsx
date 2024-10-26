@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import AlertRemovePlayer from "../../../alerts/AlertRemovePlayer";
 
 const ShowSelectedPlayers = ({
   selectedSection,
@@ -67,7 +66,6 @@ const ShowSelectedPlayers = ({
           Add More Player
         </button>
       </div>
-      {removeAlert && <AlertRemovePlayer setRemoveAlert={setRemoveAlert} />}
     </div>
   );
 };
