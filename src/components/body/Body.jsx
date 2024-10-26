@@ -61,7 +61,7 @@ const Body = ({ players, coins, handleBuyPlayer }) => {
         <AlertInsufficientCoins setInsufficientCoins={setInsufficientCoins} />
       )}
       {success && <SuccessfulBrought setSuccess={setSuccess} />}
-      <div className="border p-4 rounded-lg">
+      <div className="rounded-lg relative h-80">
         <SubscribeSection />
       </div>
     </div>

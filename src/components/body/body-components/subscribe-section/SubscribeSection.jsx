@@ -3,10 +3,11 @@ import React from "react";
 const SubscribeSection = () => {
   return (
     <div
-      className="w-full h-80 border-2 flex flex-col items-center justify-center space-y-3 rounded-lg"
+      className="absolute top-1/2 left-0 right-0 h-80 w-full flex flex-col items-center justify-center space-y-3 rounded-lg outline outline-offset-[8px] outline-2 outline-slate-100"
       style={{
         backgroundImage: 'url("/bg-shadow.png")',
         backgroundSize: "100% 100%",
+        backgroundColor: "#fff",
       }}
     >
       <h1 className="font-bold text-xl md:text-2xl lg:text-3xl">
