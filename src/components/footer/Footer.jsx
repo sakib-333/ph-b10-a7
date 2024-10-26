@@ -14,6 +14,7 @@ const Footer = () => {
           <QuickLinks />
           <Subscribe />
         </div>
+        <hr className="w-full border-t-2 border-slate-500" />
         <Copyright />
       </div>
     </div>

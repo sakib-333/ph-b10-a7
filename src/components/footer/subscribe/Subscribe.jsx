@@ -7,13 +7,13 @@ const Subscribe = () => {
       <p className="max-w-72 text-xs text-slate-200">
         Subscribe to our newsletter for the latest updates.
       </p>
-      <div className="flex space-x-3">
+      <div className="flex">
         <input
-          className="px-3 py-1 rounded-lg "
+          className="py-1 px-3 rounded-l-lg"
           type="text"
           placeholder="Enter your email"
         />
-        <button className="px-3 py-1 rounded-lg bg-gradient-to-r from-purple-300 to-yellow-300 text-black font-bold">
+        <button className="py-1 px-3 rounded-r-lg bg-gradient-to-r from-purple-300 to-yellow-300 text-black font-bold">
           Subscribe
         </button>
       </div>
