@@ -2,7 +2,7 @@
 
 ## Description
 
-BPL Dream-11 is a website where top cricketers are available based on their price.  A franchise can buy players, add them to squad and remove them if needed. Besides, only 6 players can be brought.
+BPL Dream-11 is a website where top cricketers are available based on their price. A franchise can buy players, add them to squad and remove them if needed. Besides, only 6 players can be brought.
 
 ## Technologies used
 
@@ -26,7 +26,6 @@ BPL Dream-11 is a website where top cricketers are available based on their pric
 
 3. Add them as selected, and remove if needed
 
-
 ## Live links
 
-1. Live link: [https://sakib-333-peddy.netlify.app/](https://sakib-333-peddy.netlify.app/)
+1. Live link: [visit](https://lucky-sunflower-cccd1a.netlify.app/)
