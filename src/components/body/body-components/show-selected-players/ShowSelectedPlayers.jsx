@@ -45,7 +45,7 @@ const ShowSelectedPlayers = ({
               <img className="w-20 h-20" src={player.img} alt={player.name} />
               <div>
                 <h1 className="font-bold text-xl">{player.name}</h1>
-                <p className="text-gray-500">{player.batting_style}</p>
+                <p className="text-gray-500">{player.role}</p>
                 <p className="text-gray-500">Price: {player.price}</p>
               </div>
             </div>
